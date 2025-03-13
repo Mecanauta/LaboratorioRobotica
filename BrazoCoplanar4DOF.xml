@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="03/13/25||16:55:56" using="Simscape Multibody Link Version 7.4" from="SolidWorks 32.5.0"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="ensamblaje simple este si" uid="ensamblaje simple este si" version="185">
+<AssemblyFile name="ensamblaje simple este si.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Base de eslabon 1-1" uid="Base de eslabon 1-1" entityUid="Base de eslabon 1*:*Predeterminado">
+<Transform>
+<Rotation>0.049241653451572553 0 -0.99878689396955711 0 1 0 0.99878689396955711 0 0.049241653451572553</Rotation>
+<Translation>-0.81605264546350598 0.10300000000000001 -0.19278137817495425</Translation>
+</Transform>
+</Instance>
+<Instance name="eslabon final para montaje simple-2" uid="eslabon final para montaje simple-2" entityUid="eslabon final para montaje simple*:*Predeterminado">
+<Transform>
+<Rotation>-0.049241653451572415 0.99878689396955722 0 0 0 -1 -0.99878689396955722 -0.049241653451572415 0</Rotation>
+<Translation>-0.81442767089960411 0.16100000000000003 -0.15982141067395886</Translation>
+</Transform>
+</Instance>
+<Instance name="efector final-1" uid="efector final-1" entityUid="efector final*:*Predeterminado">
+<Transform>
+<Rotation>0.049241653451572914 1.4807629011313839e-16 -0.998786893969557 -1.6499409841239822e-16 1 1.4012169036513816e-16 0.998786893969557 1.5789411935861791e-16 0.049241653451572914</Rotation>
+<Translation>-0.51789183578271125 0.16104339100558096 -0.23651636461388656</Translation>
+</Transform>
+</Instance>
+<Instance name="eslabon final para montaje simple-1" uid="eslabon final para montaje simple-1" entityUid="eslabon final para montaje simple*:*Predeterminado">
+<Transform>
+<Rotation>-0.049241653451572776 0.99878689396955711 -1.4560867632851595e-16 1.6412673667440967e-16 -1.3769384166874033e-16 -1 -0.99878689396955711 -0.049241653451572776 -1.5714736110652519e-16</Rotation>
+<Translation>-0.66463326208415918 0.16102169550279044 -0.1672064939308664</Translation>
+</Transform>
+</Instance>
+<Instance name="Base-1" uid="Base-1" grounded="true" entityUid="Base*:*Predeterminado">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>-0.81605264546350609 0.010000000000000002 -0.19278137817495425</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Concentric name="Concéntrica8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Base-1</Uid>
+</InstancePath>
+<Position>0 0.064000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Base de eslabon 1-1</Uid>
+</InstancePath>
+<Position>0 -0.025999999999999995 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincidente9">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Base-1</Uid>
+</InstancePath>
+<Position>0 0.084999999999999992 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Base de eslabon 1-1</Uid>
+</InstancePath>
+<Position>0 -0.0080000000000000071 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concéntrica9">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Base de eslabon 1-1</Uid>
+</InstancePath>
+<Position>0.082999999999999963 0.058000000000000024 -1.1102230246251565e-16</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>eslabon final para montaje simple-2</Uid>
+</InstancePath>
+<Position>0.064000000000000029 0 0</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincidente10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Base de eslabon 1-1</Uid>
+</InstancePath>
+<Position>0.033000000000000029 0.058000000000000024 -1.1102230246251565e-16</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>eslabon final para montaje simple-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concéntrica6">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>eslabon final para montaje simple-1</Uid>
+</InstancePath>
+<Position>0.064000000000000001 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>eslabon final para montaje simple-2</Uid>
+</InstancePath>
+<Position>-0.010000000000000037 0.14997634602523213 -2.1695502790464172e-05</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincidente7">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>eslabon final para montaje simple-1</Uid>
+</InstancePath>
+<Position>0.064000000000000001 0 0</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>eslabon final para montaje simple-2</Uid>
+</InstancePath>
+<Position>0.063999999999999974 0.14997634602523224 -2.1695502790464172e-05</Position>
+<Axis>-1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concéntrica10">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>eslabon final para montaje simple-1</Uid>
+</InstancePath>
+<Position>0 0.14997634602523213 -2.1695502790436416e-05</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>efector final-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincidente15">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>eslabon final para montaje simple-1</Uid>
+</InstancePath>
+<Position>0 0.14997634602523213 -2.1695502790436416e-05</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>efector final-1</Uid>
+</InstancePath>
+<Position>0.061999999999999972 0 0</Position>
+<Axis>1.0000000000000002 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Base de eslabon 1" uid="Base de eslabon 1*:*Predeterminado" version="178">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Base de eslabon 1.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.54981161118720945</Mass>
+<CenterOfMass>-0.016402894705126358 0.01686376920216694 0</CenterOfMass>
+<Inertia>0.00072835778563381485 0.0018016819179297891 0.0016116437743916242 0 0 0.00024277183160662533</Inertia>
+</MassProperties>
+<GeometryFile name="Base de eslabon 1_Predeterminado_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Base" uid="Base*:*Predeterminado" version="369">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Base.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.78897646658255915</Mass>
+<CenterOfMass>-0.00065827519946425614 0.030443790582610444 -0.00062317570502504161</CenterOfMass>
+<Inertia>0.0013961988657403956 0.0015256036199152057 0.0013947317055163205 -6.6099214999096145e-06 1.2970646165012072e-05 -6.9822160246461942e-06</Inertia>
+</MassProperties>
+<GeometryFile name="Base_Predeterminado_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="efector final" uid="efector final*:*Predeterminado" version="142">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="efector final.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.052601184195396625</Mass>
+<CenterOfMass>0.031000000219141746 1.826444396890463e-08 -0.021464973273251451</CenterOfMass>
+<Inertia>3.8125240653910352e-05 5.4491428179803473e-05 2.2055546324532812e-05 -1.3532166246128951e-11 -2.0003750261037072e-13 1.4753518587627672e-11</Inertia>
+</MassProperties>
+<GeometryFile name="efector final_Predeterminado_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="eslabon final para montaje simple" uid="eslabon final para montaje simple*:*Predeterminado" version="373">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="eslabon final para montaje simple.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.14662080699800084</Mass>
+<CenterOfMass>0.045901858705975837 0.075231742230102525 8.9212871719173014e-05</CenterOfMass>
+<Inertia>0.00051669816098982694 0.00020349167311977764 0.00069594679419971827 4.8950744813276897e-07 2.0034734491780633e-07 -0.00012976160111324782</Inertia>
+</MassProperties>
+<GeometryFile name="eslabon final para montaje simple_Predeterminado_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.36470588235294116" g="1" b="0.62745098039215685" a="1"/>
+<Diffuse r="0.36470588235294116" g="1" b="0.62745098039215685" a="1"/>
+<Specular r="0.18235294117647058" g="0.5" b="0.31372549019607843" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

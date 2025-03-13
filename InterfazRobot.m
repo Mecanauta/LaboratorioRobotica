@@ -22,7 +22,7 @@ function brazo_robotico_gui_main()
     L1 = 16.3;    % cm
     L2 = 14.99 ;  % cm
     L3 = 15.12;     % cm
-    L4 = 15.5;     % cm - Nuevo eslabón
+    L4 = 15.5;     % cm 
 
     % Parámetros DH
     a_1 = 0;
@@ -309,23 +309,23 @@ function actualizarBrazo(~, ~)
     t = [0; 10];
     
     % Crear señales constantes para los ángulos (en grados para Simscape)
-    senal_angulo1 = [theta1; theta1];
-    senal_angulo2 = [theta2; theta2];
-    senal_angulo3 = [theta3; theta3];
-    senal_angulo4 = [theta4; theta4]; % NUEVA señal para ángulo 4
+    senal_angulo1 = [Theta_1; Theta_1];
+    senal_angulo2 = [Theta_2; Theta_2];
+    senal_angulo3 = [Theta_3; Theta_3];
+    senal_angulo4 = [Theta_4; Theta_4]; 
     
     % Asignar al workspace
     assignin('base', 'tiempo', t);
     assignin('base', 'senal_angulo1', [t, senal_angulo1]);
     assignin('base', 'senal_angulo2', [t, senal_angulo2]);
     assignin('base', 'senal_angulo3', [t, senal_angulo3]);
-    assignin('base', 'senal_angulo4', [t, senal_angulo4]); % NUEVA señal para ángulo 4
+    assignin('base', 'senal_angulo4', [t, senal_angulo4]); 
     
     % También asignar ángulos en radianes para uso en Simscape si es necesario
     assignin('base', 'angulo_revolute1', Theta_1);
     assignin('base', 'angulo_revolute2', Theta_2);
     assignin('base', 'angulo_revolute3', Theta_3);
-    assignin('base', 'angulo_revolute4', Theta_4); % NUEVO ángulo 4
+    assignin('base', 'angulo_revolute4', Theta_4);
 
     % Inicializar o actualizar la estructura simData
     if ~evalin('base', 'exist(''simData'', ''var'')')
@@ -375,7 +375,6 @@ function actualizarBrazo(~, ~)
           0 sin(alpha_3) cos(alpha_3) d3;
           0 0 0 1];
     
-    % NUEVA matriz para el cuarto ángulo
     A4 = [cos(Theta_4) -sin(Theta_4)*cos(alpha_4) sin(Theta_4)*sin(alpha_4) a_4*cos(Theta_4);
           sin(Theta_4) cos(Theta_4)*cos(alpha_4) -cos(Theta_4)*sin(alpha_4) a_4*sin(Theta_4);
           0 sin(alpha_4) cos(alpha_4) d4;
@@ -385,7 +384,7 @@ function actualizarBrazo(~, ~)
     T01 = A1;
     T02 = A1*A2;
     T03 = A1*A2*A3;
-    T04 = A1*A2*A3*A4; % NUEVA matriz acumulada total (hasta el 4° ángulo)
+    T04 = A1*A2*A3*A4; 
     
     % Actualizar interfaz con la matriz de transformación total (T04)
     set(matriz_row1, 'String', sprintf('╔ %6.3f  %6.3f  %6.3f  %6.1f ╗', T04(1,1), T04(1,2), T04(1,3), T04(1,4)));
@@ -426,7 +425,7 @@ function actualizarBrazo(~, ~)
     h1 = plot3(ax, [x0 x1], [y0 y1], [z0 z1], 'b-', 'LineWidth', 3); % Eslabón 1 (base)
     h2 = plot3(ax, [x1 x2], [y1 y2], [z1 z2], 'r-', 'LineWidth', 3); % Eslabón 2
     h3 = plot3(ax, [x2 x3], [y2 y3], [z2 z3], 'g-', 'LineWidth', 3); % Eslabón 3
-    h4 = plot3(ax, [x3 x4], [y3 y4], [z3 z4], 'm-', 'LineWidth', 3); % Eslabón 4 (NUEVO)
+    h4 = plot3(ax, [x3 x4], [y3 y4], [z3 z4], 'm-', 'LineWidth', 3); % Eslabón 4 
     
     % Agregar marcadores en las juntas
     joint_markers = plot3(ax, [x0 x1 x2 x3], [y0 y1 y2 y3], [z0 z1 z2 z3], 'ko', 'MarkerFaceColor', 'black', 'MarkerSize', 10);
@@ -586,7 +585,7 @@ function detenerOperacion(~, ~)
         % Detener simulación Simscape
         try
             % Verificar si hay modelos cargados
-            modelos = {'BrazoCoplanar4DOF', 'BrazoCoplanar1'};
+            modelos = {'BrazoCoplanar4DOF', 'BrazoCoplanar1','BrazoCoplanar4DOF2'};
             for i = 1:length(modelos)
                 if bdIsLoaded(modelos{i})
                     if strcmp(get_param(modelos{i}, 'SimulationStatus'), 'running')
@@ -620,7 +619,7 @@ function paradaEmergencia(~, ~)
     
     % Intentar detener simulaciones en curso
     try
-        modelos = {'BrazoCoplanar4DOF', 'BrazoCoplanar1'};
+        modelos = {'BrazoCoplanar4DOF', 'BrazoCoplanar1','BrazoCoplanar4DOF2'};
         for i = 1:length(modelos)
             if bdIsLoaded(modelos{i})
                 if strcmp(get_param(modelos{i}, 'SimulationStatus'), 'running')
